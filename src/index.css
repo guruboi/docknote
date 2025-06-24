@@ -1,0 +1,186 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Segoe UI', sans-serif;
+  background: #1f1f1f;
+  color: #fff;
+}
+
+.app-container {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 180px;
+  background: #252525;
+  border-right: 1px solid #333;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: #2c2c2c;
+  font-weight: bold;
+  font-size: 1rem;
+  border-bottom: 1px solid #333;
+}
+
+.sidebar button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+#note-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  flex: 1;
+}
+
+#note-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+#note-list li:hover {
+  background: #333;
+}
+
+
+#note-list li.active {
+  background: #373737;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.top-bar {
+  -webkit-app-region: drag;
+  background: #2c2c2c;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #444;
+}
+
+.left-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+
+.window-controls {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.window-controls button,
+#toggle-sidebar {
+  -webkit-app-region: no-drag;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+
+.title-bar button {
+  -webkit-app-region: no-drag;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* ✅ Updated for <div id="note"> editor */
+#note {
+  flex: 1;
+  padding: 1rem;
+  background: #292929;
+  color: #f1f1f1;
+  font-size: 1rem;
+  outline: none;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  line-height: 1.5;
+}
+
+/* Optional: style pasted images */
+#note img {
+  max-width: 100%;
+  display: block;
+  margin-top: 1rem;
+  border-radius: 8px;
+}
+
+.rename-input {
+  background: #333;
+  color: white;
+  border: none;
+  width: 100%;
+  font-size: 1rem;
+  padding: 0.4rem;
+}
+
+#delete-selected {
+  background: #d33;
+  color: white;
+  padding: 0.25rem 0.6rem;
+  font-size: 0.85rem;
+  margin: 0.5rem auto 0 auto;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  display: none;
+}
+
+.note-actions {
+  margin-left: auto;
+  display: flex;
+  gap: 0.3rem;
+}
+
+.note-actions button {
+  background: none;
+  border: none;
+  color: #888;
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 0.2rem;
+  transition: color 0.2s;
+}
+
+.note-actions button:hover {
+  color: white;
+}
+
+.note-title {
+  cursor: pointer;
+  flex-grow: 1;
+}
+
+
+
+
