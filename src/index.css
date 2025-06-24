@@ -85,6 +85,7 @@ html, body {
 .left-title {
   display: flex;
   align-items: center;
+  font-weight: bold;
   gap: 0.5rem;
 }
 

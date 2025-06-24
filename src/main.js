@@ -15,7 +15,8 @@ function createWindow() {
     resizable: true,
     movable: true,
     alwaysOnTop: true,
-    frame: true,
+    frame: false,
+    titleBarStyle: 'hidden',
     skipTaskbar: false, // hide from taskbar
     show: false,
     webPreferences: {
