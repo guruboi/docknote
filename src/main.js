@@ -18,6 +18,7 @@ function createWindow() {
     frame: false,
     titleBarStyle: 'hidden',
     skipTaskbar: false, // hide from taskbar
+    icon: path.join(__dirname, '..', 'icon.ico'),
     show: false,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),

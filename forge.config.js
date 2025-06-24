@@ -9,8 +9,15 @@ module.exports = {
   makers: [
     {
       name: '@electron-forge/maker-squirrel',
-      config: {},
+      config: {
+        name: 'docknote',
+        setupExe: 'DockNoteInstaller.exe',
+        setupIcon: 'icon.ico', // Optional: you can remove this line if you have no icon
+        shortcutName: 'DockNote',
+        noMsi: true
+      }
     },
+
     {
       name: '@electron-forge/maker-zip',
       platforms: ['darwin'],
