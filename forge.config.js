@@ -4,20 +4,21 @@ const { FuseV1Options, FuseVersion } = require('@electron/fuses');
 module.exports = {
   packagerConfig: {
     asar: true,
+    icon: 'icon.ico' // used for app icon in .exe too
   },
   rebuildConfig: {},
   makers: [
-    {
-      name: '@electron-forge/maker-squirrel',
-      config: {
-        name: 'docknote',
-        setupExe: 'DockNoteInstaller.exe',
-        setupIcon: 'icon.ico', // Optional: you can remove this line if you have no icon
-        shortcutName: 'DockNote',
-        noMsi: true
-      }
-    },
-
+  {
+    name: '@electron-forge/maker-wix',
+    config: {
+      language: 1033,
+      manufacturer: 'Guruprasath M',
+      description: 'DockNote - Lightweight Taskbar Notes',
+      shortcutName: 'DockNote',
+      upgradeCode: 'b5c4d8a9-91ab-48b3-bf40-2c34eb80caba',
+      icon: 'icon.ico' // <-- Add this line
+    }
+  },
     {
       name: '@electron-forge/maker-zip',
       platforms: ['darwin'],
@@ -29,15 +30,13 @@ module.exports = {
     {
       name: '@electron-forge/maker-rpm',
       config: {},
-    },
+    }
   ],
   plugins: [
     {
       name: '@electron-forge/plugin-auto-unpack-natives',
       config: {},
     },
-    // Fuses are used to enable/disable various Electron functionality
-    // at package time, before code signing the application
     new FusesPlugin({
       version: FuseVersion.V1,
       [FuseV1Options.RunAsNode]: false,
